@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EmbeddedResource Include="Script0004 - Set first and last name values.sql" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Script0002 - Increase name field length.sql">
