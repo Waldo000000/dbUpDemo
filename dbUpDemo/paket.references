@@ -1,3 +1,4 @@
 DbUp
 
 Serilog
+Serilog.Sinks.Literate

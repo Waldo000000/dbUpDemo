@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
 using DbUp;
+using Serilog;
+using Serilog.Core;
 
 namespace dbUpDemo
 {
@@ -15,6 +17,7 @@ namespace dbUpDemo
             var result = DeployChanges.To
                 .SqlDatabase(connectionString)
                 .WithScriptsEmbeddedInAssembly(typeof(Program).Assembly)
+                .LogTo(new SerilogUpgradeLog(new LoggerConfiguration().WriteTo.LiterateConsole().CreateLogger()))
                 .Build()
                 .PerformUpgrade();
 
